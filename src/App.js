@@ -14,31 +14,40 @@ function App() {
 	const [contacts, setContacts] = useState([]);
 	const [appointments, setAppointments] = useState([]);
 
-	const addContactHandler = ({
+	const addContactHandler = (
 		newContactName,
 		newContactPhone,
-		newContactEmail,
-	}) => {
-		(prevContacts) => {
-			setContacts([
+		newContactEmail
+	) => {
+		setContacts((prevContacts) => {
+			return [
 				...prevContacts,
-				{ newContactName, newContactPhone, newContactEmail },
-			]);
-		};
+				{
+					"ContactName": newContactName,
+					"ContactPhone": newContactPhone,
+					"ContactEmail": newContactEmail,
+				},
+			];
+		});
 	};
 
-	const addAppointmentHandler = ({
+	const addAppointmentHandler = (
 		newApptName,
 		newApptContact,
 		newApptDate,
-		newApptTime,
-	}) => {
-		(prevAppts) => {
-			setAppointments([
+		newApptTime
+	) => {
+		setAppointments((prevAppts) => {
+			return [
 				...prevAppts,
-				{ newApptName, newApptContact, newApptDate, newApptTime },
-			]);
-		};
+				{
+					"Apptname": newApptName,
+					"ApptContact": newApptContact,
+					"ApptDate": newApptDate,
+					"ApptTime": newApptTime,
+				},
+			];
+		});
 	};
 
 	const router = createBrowserRouter(
