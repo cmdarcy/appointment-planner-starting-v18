@@ -13,15 +13,25 @@ export const ContactsPage = ({ contacts, addContact }) => {
 	const [email, setEmail] = useState("");
 	const [duplicateName, setDuplicateName] = useState(false);
 
-	/* if contacts array contains name then set duplicate name to true
-   useEffect(() => {
-    if () { setDuplicateName(true)
-
-    }
-  }, []); */
+	// if any contact in contacts array contains current name then set duplicate name to true
+	useEffect(() => {
+		if (contacts.some((contact) => contact.name === name)) {
+			setDuplicateName(true);
+		}
+	}, [name, contacts]);
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		if (duplicateName) {
+			alert(
+				`Name already exists in contacts, please choose a different name and try again.`
+			);
+		} else {
+			addContact(name, phone, email);
+			setName("");
+			setPhone("");
+			setEmail("");
+		}
 		/*
     Add contact info and clear data
     if the contact name is not a duplicate
@@ -39,8 +49,11 @@ export const ContactsPage = ({ contacts, addContact }) => {
 				<h2>Add Contact</h2>
 				<ContactForm
 					name={name}
+					setName={setName}
 					phone={phone}
+					setPhone={setPhone}
 					email={email}
+					setEmail={setEmail}
 					handleSubmit={handleSubmit}
 				/>
 			</section>
