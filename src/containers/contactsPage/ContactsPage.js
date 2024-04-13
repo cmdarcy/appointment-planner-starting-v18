@@ -17,6 +17,8 @@ export const ContactsPage = ({ contacts, addContact }) => {
 	useEffect(() => {
 		if (contacts.some((contact) => contact.name === name)) {
 			setDuplicateName(true);
+		} else {
+			setDuplicateName(false);
 		}
 	}, [name, contacts]);
 
