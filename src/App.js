@@ -23,9 +23,9 @@ function App() {
 			return [
 				...prevContacts,
 				{
-					"ContactName": newContactName,
-					"ContactPhone": newContactPhone,
-					"ContactEmail": newContactEmail,
+					name: newContactName,
+					ContactPhone: newContactPhone,
+					ContactEmail: newContactEmail,
 				},
 			];
 		});
@@ -41,10 +41,10 @@ function App() {
 			return [
 				...prevAppts,
 				{
-					"Apptname": newApptName,
-					"ApptContact": newApptContact,
-					"ApptDate": newApptDate,
-					"ApptTime": newApptTime,
+					name: newApptName,
+					ApptContact: newApptContact,
+					ApptDate: newApptDate,
+					ApptTime: newApptTime,
 				},
 			];
 		});
