@@ -19,16 +19,14 @@ function App() {
 		newContactPhone,
 		newContactEmail
 	) => {
-		setContacts((prevContacts) => {
-			return [
-				...prevContacts,
-				{
-					name: newContactName,
-					ContactPhone: newContactPhone,
-					ContactEmail: newContactEmail,
-				},
-			];
-		});
+		setContacts([
+			...contacts,
+			{
+				name: newContactName,
+				ContactPhone: newContactPhone,
+				ContactEmail: newContactEmail,
+			},
+		]);
 	};
 
 	const addAppointmentHandler = (
@@ -37,17 +35,15 @@ function App() {
 		newApptDate,
 		newApptTime
 	) => {
-		setAppointments((prevAppts) => {
-			return [
-				...prevAppts,
-				{
-					name: newApptName,
-					ApptContact: newApptContact,
-					ApptDate: newApptDate,
-					ApptTime: newApptTime,
-				},
-			];
-		});
+		setAppointments([
+			...appointments,
+			{
+				name: newApptName,
+				ApptContact: newApptContact,
+				ApptDate: newApptDate,
+				ApptTime: newApptTime,
+			},
+		]);
 	};
 
 	const router = createBrowserRouter(
