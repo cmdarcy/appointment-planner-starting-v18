@@ -3,6 +3,14 @@ import React, { useState } from "react";
 import { AppointmentForm } from "../../components/appointmentForm/AppointmentForm";
 import { TileList } from "../../components/tileList/TileList";
 
+/**
+ * Renders the AppointmentsPage component.
+ *
+ * @param {Array} appointments - The array of appointments.
+ * @param {Array} contacts - The array of contacts.
+ * @param {Function} addAppointment - The function to add an appointment.
+ * @return {JSX.Element} The rendered AppointmentsPage component.
+ */
 export const AppointmentsPage = ({
 	appointments,
 	contacts,

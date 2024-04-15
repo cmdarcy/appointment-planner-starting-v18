@@ -1,5 +1,17 @@
 import React from "react";
 
+/**
+ * Renders a contact form with input fields for name, phone, and email.
+ *
+ * @param {string} name - The name input value.
+ * @param {function} setName - The function to update the name state.
+ * @param {string} phone - The phone input value.
+ * @param {function} setPhone - The function to update the phone state.
+ * @param {string} email - The email input value.
+ * @param {function} setEmail - The function to update the email state.
+ * @param {function} handleSubmit - The function to handle form submission.
+ * @return {JSX.Element} The form JSX element for submitting contact information.
+ */
 export const ContactForm = ({
 	name,
 	setName,

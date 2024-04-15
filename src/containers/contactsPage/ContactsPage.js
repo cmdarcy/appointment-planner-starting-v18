@@ -3,17 +3,19 @@ import React, { useState, useEffect } from "react";
 import { ContactForm } from "../../components/contactForm/ContactForm";
 import { TileList } from "../../components/tileList/TileList";
 
+/**
+ * Renders the ContactsPage component.
+ *
+ * @param {Array} contacts - The array of contacts.
+ * @param {Function} addContact - The function to add a contact.
+ * @return {JSX.Element} The rendered ContactsPage component.
+ */
 export const ContactsPage = ({ contacts, addContact }) => {
-	/*
-  Define state variables for 
-  contact info and duplicate check
-  */
 	const [name, setName] = useState("");
 	const [phone, setPhone] = useState("");
 	const [email, setEmail] = useState("");
 	const [duplicateName, setDuplicateName] = useState(false);
 
-	// if any contact in contacts array contains current name then set duplicate name to true
 	useEffect(() => {
 		if (contacts.some((contact) => contact.name === name)) {
 			setDuplicateName(true);
@@ -34,16 +36,7 @@ export const ContactsPage = ({ contacts, addContact }) => {
 			setPhone("");
 			setEmail("");
 		}
-		/*
-    Add contact info and clear data
-    if the contact name is not a duplicate
-    */
 	};
-
-	/*
-  Using hooks, check for contact name in the 
-  contacts array variable in props
-  */
 
 	return (
 		<div>
